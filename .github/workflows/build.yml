@@ -14,7 +14,7 @@ jobs:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
           ref: "master"
       - name: Setup Sonarqube
-        uses: warchant/setup-sonar-scanner@master
+        uses: warchant/setup-sonar-scanner@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
