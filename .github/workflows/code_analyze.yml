@@ -7,13 +7,13 @@ on:
 jobs:
   sonarQubeRrigger:
     name: SonarQube Trigger
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest-java # Consider using a more specific runner
     steps:
       - uses: actions/checkout@v3
         with:
-          fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
+          fetch-depth: 0
           ref: "main"
-      - name: Setup Sonarqube
+      - name: Setup SonarQube
         uses: warchant/setup-sonar-scanner@v4
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
